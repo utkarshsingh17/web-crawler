@@ -4,3 +4,40 @@ spring:
 
 server:
   port: 8081
+
+crawler:
+  max-pages: 200
+  max-depth: 5
+  politeness-delay-ms: 500
+  request-timeout-ms: 10000
+  back-queues: 4
+  user-agent: "WebCrawler/1.0 (+spring-boot)"
+  request-completion-timeout-ms: 60000
+  blacklist-hosts: []
+  resource-extensions:
+    - css
+    - js
+    - gif
+    - jpg
+    - jpeg
+    - png
+    - svg
+    - ico
+    - mp3
+    - mp4
+    - zip
+    - gz
+    - tar
+    - pdf
+    - xls
+    - xlsx
+    - doc
+    - docx
+    - ppt
+    - pptx
+
+logging:
+  level:
+    com.utkarsh.web_crawler: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"

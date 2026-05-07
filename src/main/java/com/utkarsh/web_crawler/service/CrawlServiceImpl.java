@@ -3,19 +3,19 @@ package com.utkarsh.web_crawler.service;
 import org.springframework.stereotype.Service;
 
 import com.utkarsh.web_crawler.dto.CrawlResponse;
-import com.utkarsh.web_crawler.util.CrawlingUtils;
+import com.utkarsh.web_crawler.engine.CrawlerEngine;
 
 @Service
 public class CrawlServiceImpl implements ICrawlService {
 
-    private final CrawlingUtils crawlingUtils;
+    private final CrawlerEngine engine;
 
-    public CrawlServiceImpl(CrawlingUtils crawlingUtils) {
-        this.crawlingUtils = crawlingUtils;
+    public CrawlServiceImpl(CrawlerEngine engine) {
+        this.engine = engine;
     }
 
     @Override
     public CrawlResponse crawlResource(String link) {
-        return crawlingUtils.crawlResource(link);
+        return engine.crawl(link);
     }
 }
