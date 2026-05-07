@@ -1,3 +1,6 @@
 spring:
   application:
     name: web-crawler
+
+server:
+  port: 8081
